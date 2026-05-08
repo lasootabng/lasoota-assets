@@ -1,0 +1,222 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.phone-outer { display: flex; justify-content: center; padding: 20px 0; background: var(--color-background-secondary); border-radius: var(--border-radius-lg); }
+.phone { width: 320px; background: #f5f6fa; border-radius: 36px; border: 6px solid #1a1a2e; overflow: hidden; }
+.status-bar { background: #fff; padding: 10px 18px 6px; display: flex; justify-content: space-between; align-items: center; }
+.status-time { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+.status-icons { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #1a1a2e; }
+
+.top-bar { background: #fff; padding: 10px 16px 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 0.5px solid #ebebeb; }
+.top-bar-left .greeting { font-size: 11px; color: #888; }
+.top-bar-left .location { font-size: 13px; font-weight: 600; color: #1a1a2e; display: flex; align-items: center; gap: 3px; }
+.top-bar-right { display: flex; gap: 10px; align-items: center; }
+.icon-btn { width: 34px; height: 34px; border-radius: 50%; background: #f5f6fa; display: flex; align-items: center; justify-content: center; border: 0.5px solid #ebebeb; }
+
+.scroll { background: #f5f6fa; }
+.sec { padding: 12px 14px; }
+
+.disc-banner { margin: 12px 14px; background: #1a56db; border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; }
+.disc-left .pill { background: rgba(255,255,255,0.2); color: #fff; font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 5px; letter-spacing: 0.6px; }
+.disc-left h3 { font-size: 17px; font-weight: 700; color: #fff; line-height: 1.2; }
+.disc-left p { font-size: 10px; color: rgba(255,255,255,0.8); margin-top: 3px; }
+.disc-left .book-btn { margin-top: 8px; background: #fff; color: #1a56db; border: none; border-radius: 20px; padding: 5px 14px; font-size: 10px; font-weight: 700; }
+.disc-right { font-size: 48px; font-weight: 800; color: rgba(255,255,255,0.15); line-height: 1; }
+
+.live-strip { margin: 0 14px 10px; background: #fff; border-radius: 10px; border: 0.5px solid #ebebeb; padding: 9px 12px; display: flex; align-items: center; gap: 8px; }
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
+.live-strip p { font-size: 11px; color: #555; }
+.live-strip strong { color: #1a56db; }
+
+.sec-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.sec-title { font-size: 14px; font-weight: 600; color: #1a1a2e; }
+.sec-count { font-size: 11px; color: #888; }
+
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+.scard { background: #fff; border: 0.5px solid #ebebeb; border-radius: 14px; padding: 12px 11px 10px; display: flex; flex-direction: column; gap: 8px; }
+.scard-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.ic-blue { background: #E6F1FB; }
+.ic-teal { background: #E1F5EE; }
+.ic-amber { background: #FAEEDA; }
+.ic-purple { background: #EEEDFE; }
+.scard-name { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+.scard-desc { font-size: 10px; color: #888; line-height: 1.4; margin-top: 1px; }
+.scard-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 2px; }
+.badge { font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 20px; }
+.badge-green { background: #EAF3DE; color: #27500A; }
+.badge-amber { background: #FAEEDA; color: #633806; }
+
+.hero { margin: 12px 14px 14px; background: #0f1f45; border-radius: 14px; padding: 18px 16px; }
+.hero-tag { background: #f97316; color: #fff; font-size: 9px; font-weight: 700; padding: 3px 9px; border-radius: 20px; display: inline-block; letter-spacing: 0.7px; margin-bottom: 8px; }
+.hero h2 { font-size: 18px; font-weight: 800; color: #fff; line-height: 1.25; }
+.hero h2 span { color: #fbbf24; }
+.hero p { font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 5px; line-height: 1.5; }
+.hero-stats { display: flex; gap: 14px; margin-top: 12px; }
+.hstat { }
+.hstat .num { font-size: 15px; font-weight: 700; color: #fff; }
+.hstat .lbl { font-size: 9px; color: rgba(255,255,255,0.5); margin-top: 1px; }
+.hero-cta { margin-top: 14px; display: flex; align-items: center; gap: 10px; }
+.hero-cta button { background: #f97316; color: #fff; border: none; border-radius: 20px; padding: 8px 16px; font-size: 11px; font-weight: 700; }
+.hero-live { display: flex; align-items: center; gap: 5px; }
+.hero-live .dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+.hero-live span { font-size: 10px; color: rgba(255,255,255,0.5); }
+
+.bottom-nav { background: #fff; border-top: 0.5px solid #ebebeb; display: flex; padding: 8px 0 12px; }
+.nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 9px; color: #aaa; }
+.nav-item.active { color: #1a56db; }
+.nav-item i { font-size: 20px; }
+</style>
+
+<h2 class="sr-only">QuickFix complete home page mockup — white background with discount banner, 4 service cards and hero section</h2>
+
+<div class="phone-outer">
+<div class="phone">
+
+  <div class="status-bar">
+    <span class="status-time">9:41</span>
+    <div class="status-icons">
+      <i class="ti ti-wifi" style="font-size:13px;" aria-hidden="true"></i>
+      <i class="ti ti-signal-4g" style="font-size:13px;" aria-hidden="true"></i>
+      <i class="ti ti-battery-2" style="font-size:13px;" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="greeting">Namaste, Rahul ji</div>
+      <div class="location">
+        <i class="ti ti-map-pin" style="font-size:13px;color:#1a56db;" aria-hidden="true"></i>
+        Kankarbagh, Patna
+        <i class="ti ti-chevron-down" style="font-size:12px;color:#888;" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <div class="icon-btn"><i class="ti ti-search" style="font-size:16px;color:#1a1a2e;" aria-hidden="true"></i></div>
+      <div class="icon-btn"><i class="ti ti-bell" style="font-size:16px;color:#1a1a2e;" aria-hidden="true"></i></div>
+    </div>
+  </div>
+
+  <div class="scroll">
+
+    <div class="disc-banner">
+      <div class="disc-left">
+        <div class="pill">LIMITED TIME OFFER</div>
+        <h3>Flat 30% OFF<br>First Booking!</h3>
+        <p>Code: <strong>FIRST30</strong> &nbsp;•&nbsp; Today only</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+      <div class="disc-right">30%</div>
+    </div>
+
+    <div class="live-strip">
+      <div class="live-dot"></div>
+      <p><strong>9 electricians</strong> active near Kankarbagh right now</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-header">
+        <span class="sec-title">Kya Chahiye Aaj?</span>
+        <span class="sec-count">4 services</span>
+      </div>
+      <div class="grid2">
+
+        <div class="scard">
+          <div class="scard-icon ic-blue">
+            <i class="ti ti-bolt" style="font-size:22px;color:#0C447C;" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="scard-name">Electrician</div>
+            <div class="scard-desc">Wiring, fitting, repair — koi bhi kaam</div>
+          </div>
+          <div class="scard-foot">
+            <span class="badge badge-green">Available now</span>
+            <i class="ti ti-arrow-right" style="font-size:14px;color:#aaa;" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="scard">
+          <div class="scard-icon ic-teal">
+            <i class="ti ti-steering-wheel" style="font-size:22px;color:#085041;" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="scard-name">Driver on Call</div>
+            <div class="scard-desc">Hospital, function, outstation — jab chahiye</div>
+          </div>
+          <div class="scard-foot">
+            <span class="badge badge-green">Available now</span>
+            <i class="ti ti-arrow-right" style="font-size:14px;color:#aaa;" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="scard">
+          <div class="scard-icon ic-amber">
+            <i class="ti ti-tools" style="font-size:22px;color:#633806;" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="scard-name">Kaamgar</div>
+            <div class="scard-desc">Function, shifting, construction ka kaam</div>
+          </div>
+          <div class="scard-foot">
+            <span class="badge badge-amber">Book in advance</span>
+            <i class="ti ti-arrow-right" style="font-size:14px;color:#aaa;" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="scard">
+          <div class="scard-icon ic-purple">
+            <i class="ti ti-home-check" style="font-size:22px;color:#3C3489;" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="scard-name">Ghar Safai</div>
+            <div class="scard-desc">Deep clean, daily help — ghar chamkao</div>
+          </div>
+          <div class="scard-foot">
+            <span class="badge badge-green">Available now</span>
+            <i class="ti ti-arrow-right" style="font-size:14px;color:#aaa;" aria-hidden="true"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-tag">PATNA KA APNA APP</div>
+      <h2>Ghar Baithe<br>Bulao, Kaam<br><span>Ho Jao!</span></h2>
+      <p>Verified pros. Seedha ghar par.<br>Koi jhanjhat nahi.</p>
+      <div class="hero-stats">
+        <div class="hstat"><div class="num">5,000+</div><div class="lbl">Patna homes served</div></div>
+        <div class="hstat"><div class="num">4.8 ★</div><div class="lbl">Average rating</div></div>
+        <div class="hstat"><div class="num">30 min</div><div class="lbl">Avg arrival time</div></div>
+      </div>
+      <div class="hero-cta">
+        <button>Book in 60 Seconds</button>
+        <div class="hero-live">
+          <div class="dot"></div>
+          <span>Live now</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item active">
+      <i class="ti ti-home" aria-hidden="true"></i>
+      <span>Home</span>
+    </div>
+    <div class="nav-item">
+      <i class="ti ti-calendar" aria-hidden="true"></i>
+      <span>Bookings</span>
+    </div>
+    <div class="nav-item">
+      <i class="ti ti-headset" aria-hidden="true"></i>
+      <span>Support</span>
+    </div>
+    <div class="nav-item">
+      <i class="ti ti-user" aria-hidden="true"></i>
+      <span>Profile</span>
+    </div>
+  </div>
+
+</div>
+</div>
